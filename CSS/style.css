@@ -36,11 +36,11 @@ body {
 }
 
 .navigation ul li {
-	position: relative;
 	list-style: none;
+	position: relative;
 	width: 70px;
 	height: 70px;
-	z-index: 1;
+	z-index: 2;
 }
 
 .navigation ul li a {
@@ -80,19 +80,19 @@ body {
 }
 
 .navigation ul li.active a .text {
-	opacity: 1;
 	transform: translateY(10px);
+	opacity: 1;
 }
 
 .indicator {
 	position: absolute;
-	align-items: initial;
 	top: -50%;
 	width: 70px;
 	height: 70px;
 	background: #29fd53;
 	border-radius: 50%;
 	border: 6px solid var(--clr);
+	z-index: 1;
 	transition: 0.5s;
 }
 
