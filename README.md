@@ -20,7 +20,7 @@
 
 Esse projeto é uma sequência de 3 aulas sobre como montar um menu mobile com animação sem a utilização de técnicas avançadas de javascript.
 
-Para a escrita do CSS utilizei o SCSS para melhor visualização e manutenção do código.
+Para a escrita do CSS utilizei o SCSS para melhor visualização e manutenção do código. Essa extensão eu aprendi nos cursos da Alura.
 
 Ao invéz de manter o javascript do 'click' no final do html, preferi colocar ele um arquivo js e como o mesmo é utilizado nos três modelos, assim fica mais fácil de realizar a manutenção.
 
@@ -38,6 +38,3 @@ Resultado do Menu Mágico 2
 Resultado do Menu Mágico 3
 
 ![Menu Mágico 3](https://user-images.githubusercontent.com/29807231/211110181-d8affca8-0405-42df-90d8-ba578c1f1f88.png#vitrinedev)
-
-
-
