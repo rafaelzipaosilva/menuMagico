@@ -16,8 +16,8 @@ body {
 
 .navigation {
     position: relative;
-    width: 400;
-    height: 60;
+    width: 400px;
+    height: 60px;
     background: #fff;
     display: flex;
     justify-content: center;
@@ -29,7 +29,110 @@ body {
         width: 350px;
 
         li {
-            
+            list-style: none;
+            position: relative;
+            width: 70px; // 350 / 5 = 70
+            height: 60px;
+            z-index: 2;
+
+            a {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+
+                .icon {
+                    position: relative;
+                    display: block;
+                    width: 55px;
+                    height: 55px;
+                    // background: #f00;
+                    text-align: center;
+                    line-height: 65px;
+                    border-radius: 50%;
+                    color: $clr;
+                    font-size: 1.5em;
+                    transition: 0.5s;
+                    transition-delay: 0s;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--ccl);
+                        border-radius: 50%;
+                        filter: blur(5px);
+                        opacity: 0;
+                        transition: 0.5s;
+                        transition-delay: 0s;
+                    }
+                }
+            }
+
+            &.active {
+                a {
+                    .icon {
+                        background: var(--ccl);
+                        color: #fff;
+                        transform: translateY(-27px);
+                        transition-delay: 0.25s;
+                        
+                        &::before {
+                            opacity: 0.5;
+                            transition-delay: 0.25s;
+                        }
+                    }
+
+                }
+            }
+
+            $i: 0;
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}).active ~ .indicator {
+                    transform: translateX(calc(70px * #{$i - 1}));
+                }
+            }
         }
+
+    }
+}
+
+.indicator {
+    position: absolute;
+    top: -35px;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.5s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: -28px;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 15px 18px #fff;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: -28px;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -15px 18px #fff;
     }
 }
